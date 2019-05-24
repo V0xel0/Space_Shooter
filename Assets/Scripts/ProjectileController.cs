@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -12,6 +13,12 @@ public class ProjectileController : MonoBehaviour
     {
         colType.type = EnumTag.Bullet;
     }
+
+    private void OnBecameInvisible()
+    {
+        gameObject.SetActive(false);
+    }
+
     void Awake()
     {
         rb = GetComponent<Rigidbody>();

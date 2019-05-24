@@ -3,20 +3,47 @@ using System.Collections.Generic;
 using System.Linq.Expressions;
 using UnityEngine;
 
+enum GameState
+{
+    StartMenu,
+    Running,
+    End
+}
 public class GameManagerController : MonoBehaviour
 {
     public AsteroidSpawnerController hazardSpawner;
-    private bool isWaveActive = true;
-
     public float spawnFreq;
-    private void Start()
+    public GameObject player;
+    private bool isWaveActive = false;
+    private GameState state = GameState.StartMenu;
+    
+    // Main game logic loop
+    private void Update()
     {
-        InvokeRepeating(nameof(StartSpawn), 2, spawnFreq);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
+        switch (state)
+        {
+            case GameState.StartMenu:
+                isWaveActive = false;
+                if (Input.GetKey(KeyCode.W))
+                {
+                    state = GameState.Running;
+                }
+                return;
+            case GameState.Running:
+                if (isWaveActive == false)
+                {
+                    InvokeRepeating(nameof(StartSpawn), 2, spawnFreq);
+                    isWaveActive = true;
+                }
+                if (!player.activeSelf)
+                {
+                    state = GameState.End;
+                }
+                break;
+            case GameState.End:
+                isWaveActive = false;
+                break;
+        }
         if (!isWaveActive)
         {
             CancelInvoke();

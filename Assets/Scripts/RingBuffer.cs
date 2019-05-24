@@ -25,8 +25,8 @@ public class RingBuffer
     //Returning next object, and moving index
     public GameObject GetNextObject()
     {
-        Debug.Log($"Size {pooledObjects.Count}");
-        Debug.Log($"Current index {activeIndex}, pool {poolAmount}");
+        /*Debug.Log($"Size {pooledObjects.Count}");
+        Debug.Log($"Current index {activeIndex}, pool {poolAmount}");*/
         int tempIndex = activeIndex;
         activeIndex = ++activeIndex % poolAmount;
         return pooledObjects[tempIndex];

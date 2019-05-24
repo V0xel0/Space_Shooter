@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 public enum EnumTag
 {
     Player,
@@ -10,5 +11,6 @@ public enum EnumTag
 [CreateAssetMenu]
 public class CommonEnum : ScriptableObject
 {
+    [NonSerialized]
     public EnumTag type;
 }
