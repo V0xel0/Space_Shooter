@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,8 +8,8 @@ public class Shooting : MonoBehaviour
     private float nextFire;
     public float fireRate;
     public RingBuffer bullets;
-    // Start is called before the first frame update
-    private void Start()
+
+    private void Awake()
     {
         bullets.Init();
     }
