@@ -88,9 +88,8 @@ GameObject:
   - component: {fileID: 4387128916508995660}
   - component: {fileID: 3864606811295782226}
   - component: {fileID: 8803542314174195342}
-  - component: {fileID: 5357239863589096665}
   - component: {fileID: 1963141494486315728}
-  - component: {fileID: 7585731677761373433}
+  - component: {fileID: 8802748838024925865}
   m_Layer: 0
   m_Name: Projectile
   m_TagString: Untagged
@@ -143,19 +142,6 @@ CapsuleCollider:
   m_Height: 0.55
   m_Direction: 2
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &5357239863589096665
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8454837747878082653}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 151faea7b3ec796418879c7541d1dd72, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 10
 --- !u!23 &1963141494486315728
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -193,7 +179,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!114 &7585731677761373433
+--- !u!114 &8802748838024925865
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -202,7 +188,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 8454837747878082653}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ecb74993f12e46946bba43473e1ba4e9, type: 3}
+  m_Script: {fileID: 11500000, guid: 29e463fc1b030ac4eb71de7175e9f875, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  colType: {fileID: 11400000, guid: 44fcfe0414a42db4dac20590fd673461, type: 2}
+  speed: 8
+  colType: {fileID: 0}
