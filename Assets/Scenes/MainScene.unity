@@ -151,8 +151,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hazardSpawner: {fileID: 334609438}
-  spawnFreq: 0.5
+  spawnFreq: 0.25
   player: {fileID: 1654170714}
+  score: {fileID: 11400000, guid: d414a2cb5159d114381d030037174a25, type: 2}
 --- !u!4 &18268252
 Transform:
   m_ObjectHideFlags: 0
@@ -475,7 +476,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   asteroids:
-    poolAmount: 20
+    poolAmount: 60
     pooledObject: {fileID: 3677030418524484599, guid: 69ad9166d5635e0438f32cbf70c8a51c,
       type: 3}
   maxSpawnX: 6
@@ -1026,7 +1027,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d3620800c924dd4e9ef865e8779034a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireRate: 0.1
+  fireRate: 0.2
   bullets:
     poolAmount: 30
     pooledObject: {fileID: 8454837747878082653, guid: a883ca9bb86287d499f3119f248f6447,

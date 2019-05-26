@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq.Expressions;
 using UnityEngine;
+using UnityEngine.SocialPlatforms.Impl;
 
 enum GameState
 {
@@ -14,6 +15,7 @@ public class GameManagerController : MonoBehaviour
     public AsteroidSpawnerController hazardSpawner;
     public float spawnFreq;
     public GameObject player;
+    public SharedInt score;
     private bool isWaveActive = false;
     private GameState state = GameState.StartMenu;
     
@@ -24,8 +26,10 @@ public class GameManagerController : MonoBehaviour
         {
             case GameState.StartMenu:
                 isWaveActive = false;
+                score.value = 0;
                 if (Input.GetKey(KeyCode.W))
                 {
+                    player.SetActive(true);
                     state = GameState.Running;
                 }
                 return;
@@ -42,6 +46,10 @@ public class GameManagerController : MonoBehaviour
                 break;
             case GameState.End:
                 isWaveActive = false;
+                if (Input.GetKey(KeyCode.R))
+                {
+                    state = GameState.StartMenu;
+                }
                 break;
         }
         if (!isWaveActive)
