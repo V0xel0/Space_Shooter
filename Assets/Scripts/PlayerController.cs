@@ -49,14 +49,17 @@ public class PlayerController : MonoBehaviour
         selfExplosion.SetActive(true);
     }
 
+    private void OnEnable()
+    {
+        transform.position = new Vector3(0.0f, 0.0f, 0.0f);
+    }
+
     private void FixedUpdate()
     {
         movement.x = Input.GetAxis("Horizontal");
         movement.z = Input.GetAxis("Vertical");
 
         rb.velocity = movement*speed;
-        //Wouldnt simple "else if" be better???
-       //WHY THE FUCK SET() IS NOT WORKING??
 
         rb.position = new Vector3(
             Mathf.Clamp(rb.position.x, boundry.minX, boundry.maxX),

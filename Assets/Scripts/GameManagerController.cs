@@ -16,7 +16,7 @@ public class GameManagerController : MonoBehaviour
     public float spawnFreq;
     public GameObject player;
     public SharedInt score;
-    private bool isWaveActive = false;
+    private bool isWaveActive;
     private GameState state = GameState.StartMenu;
     
     // Main game logic loop
