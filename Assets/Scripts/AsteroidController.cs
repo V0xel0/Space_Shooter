@@ -8,23 +8,15 @@ public class AsteroidController : MonoBehaviour
     public GameEvent kill;
     public GameEvent dmgToPlayer;
     
-    public Speed speed;
     public BaseDamage dmg;
     
     public GameObject explosion;
-    private Rigidbody rb;
 
     void Awake()
     {
-        rb = GetComponent<Rigidbody>();
         explosion = Instantiate(explosion);
         explosion.SetActive(false);
     }
-    void Start()
-    {
-        rb.velocity = transform.forward * speed.value;
-    }
-
     private void OnEnable()
     {
         explosion.SetActive(false);

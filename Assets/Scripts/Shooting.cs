@@ -7,13 +7,15 @@ using UnityEngine;
 public class Shooting : MonoBehaviour
 {
     public float fireRate;
-    //public RingBuffer bullets;\
     public Pooler bullets;
+    
+    public GameEvent onPowerUpFireRate;
     private float nextFire;
 
     private void Awake()
     {
         bullets.Init();
+        onPowerUpFireRate.onEventRaisedFloat += boostFireRate;
     }
 
     // Update is called once per frame
@@ -24,5 +26,10 @@ public class Shooting : MonoBehaviour
         GameObject currBullet = bullets.GetNextObject();
         currBullet.transform.position = transform.position;
         currBullet.SetActive(true);
+    }
+
+    private void boostFireRate(float boost)
+    {
+        fireRate -= boost;
     }
 }

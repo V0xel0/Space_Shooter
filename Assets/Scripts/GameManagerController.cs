@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq.Expressions;
 using UnityEngine;
@@ -15,14 +16,17 @@ enum GameState
 public class GameManagerController : MonoBehaviour
 {
     public AsteroidSpawnerController hazardSpawner;
-    public float spawnFreq;
+    public PowerUpsSpawnerController powerUpsSpawner;
+
+    public GameEvent resetGame;
+    
     public GameObject player;
     public SharedInt score;
+    
+    public float spawnFreq;
   
     private bool isWaveActive;
     private GameState state = GameState.StartMenu;
-    
-    // Main game logic loop
     private void Update()
     {
         switch (state)
@@ -35,11 +39,12 @@ public class GameManagerController : MonoBehaviour
                     player.SetActive(true);
                     state = GameState.Running;
                 }
-                return;
+                break;
             case GameState.Running:
                 if (isWaveActive == false)
                 {
-                    InvokeRepeating(nameof(StartSpawn), 2, spawnFreq);
+                    InvokeRepeating(nameof(SpawnHazards), 2, spawnFreq);
+                    InvokeRepeating(nameof(SpawnPowerUps), 6, spawnFreq*4);
                     isWaveActive = true;
                 }
                 if (!player.activeSelf)
@@ -61,8 +66,14 @@ public class GameManagerController : MonoBehaviour
         }
     }
 
-    void StartSpawn()
+    private void SpawnHazards()
     {
         hazardSpawner.SpawnAsteroid();
+    }
+
+    private void SpawnPowerUps()
+    {
+        powerUpsSpawner.SpawnPowerUp();
+
     }
 }
