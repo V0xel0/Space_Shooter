@@ -94,3 +94,7 @@ _UpgradeReport_Files/
 Thumbs.db
 Desktop.ini
 .DS_Store
+
+# Project Related not filtered assets
+/[Aa]ssets/StarSparrow
+/[Aa]ssets/PowerUp

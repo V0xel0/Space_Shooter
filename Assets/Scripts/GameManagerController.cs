@@ -10,12 +10,15 @@ enum GameState
     Running,
     End
 }
+
+
 public class GameManagerController : MonoBehaviour
 {
     public AsteroidSpawnerController hazardSpawner;
     public float spawnFreq;
     public GameObject player;
     public SharedInt score;
+  
     private bool isWaveActive;
     private GameState state = GameState.StartMenu;
     

@@ -9,6 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a3e1825c8d1d6e41be26c9bf652bde6, type: 3}
-  m_Name: Score
+  m_Script: {fileID: 11500000, guid: fef0ab0d41ec7054fbf8442efca8a295, type: 3}
+  m_Name: DealDmgToPlayer
   m_EditorClassIdentifier: 

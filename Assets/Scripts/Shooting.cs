@@ -1,13 +1,15 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography.X509Certificates;
 using UnityEngine;
 
 public class Shooting : MonoBehaviour
 {
-    private float nextFire;
     public float fireRate;
-    public RingBuffer bullets;
+    //public RingBuffer bullets;\
+    public Pooler bullets;
+    private float nextFire;
 
     private void Awake()
     {

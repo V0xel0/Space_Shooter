@@ -7,13 +7,6 @@ public class ProjectileController : MonoBehaviour
 {
     private Rigidbody rb;
     public float speed;
-    
-    public CommonEnum colType;
-    void OnTriggerEnter()
-    {
-        colType.type = EnumTag.Bullet;
-    }
-
     private void OnBecameInvisible()
     {
         gameObject.SetActive(false);

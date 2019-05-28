@@ -5,9 +5,14 @@ using UnityEngine;
 
 public class AsteroidController : MonoBehaviour
 {
-    private Rigidbody rb;
-    public float speed;
+    public GameEvent kill;
+    public GameEvent dmgToPlayer;
+    
+    public Speed speed;
+    public BaseDamage dmg;
+    
     public GameObject explosion;
+    private Rigidbody rb;
 
     void Awake()
     {
@@ -17,12 +22,27 @@ public class AsteroidController : MonoBehaviour
     }
     void Start()
     {
-        rb.velocity = transform.forward * speed;
+        rb.velocity = transform.forward * speed.value;
     }
 
     private void OnEnable()
     {
         explosion.SetActive(false);
+    }
+    
+    void OnTriggerEnter(Collider other)
+    {
+        gameObject.SetActive(false);
+        if (other.transform.root.GetComponent<ProjectileController>() != null)
+        {
+            other.gameObject.SetActive(false);
+            kill.Raise();
+            return;
+        }
+        if (other.transform.root.GetComponent<PlayerController>() != null)
+        {
+           dmgToPlayer.Raise(dmg.value);
+        }
     }
 
     private void OnDisable()
