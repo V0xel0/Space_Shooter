@@ -13,7 +13,6 @@ enum GameState
     End
 }
 
-
 public class GameManagerController : MonoBehaviour
 {
     public AsteroidSpawnerController hazardSpawner;

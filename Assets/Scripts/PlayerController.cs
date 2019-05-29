@@ -20,6 +20,7 @@ public class PlayerController : MonoBehaviour
     
     public GameEvent receivedDmg;
     public GameEvent playerHpChanged;
+    public GameEvent hpPickUp;
     
     public GameObject selfExplosion;
     public GameObject[] looks;
@@ -43,6 +44,7 @@ public class PlayerController : MonoBehaviour
         movement = new Vector3(0.0f, 0.0f, 0.0f);
         rb = GetComponent<Rigidbody>();
         receivedDmg.onEventRaisedFloat += OnRecievedDmg;
+        hpPickUp.onEventRaisedFloat += OnHpPickup;
     }
 
     private void OnDisable()
@@ -52,6 +54,7 @@ public class PlayerController : MonoBehaviour
         selfExplosion.transform.position = transform.position;
         selfExplosion.SetActive(true);
         receivedDmg.onEventRaisedFloat -= OnRecievedDmg;
+        hpPickUp.onEventRaisedFloat -= OnHpPickup;
     }
 
     public void Update()
@@ -94,5 +97,12 @@ public class PlayerController : MonoBehaviour
         {
             gameObject.SetActive(false); //TODO:: Later make it event that player dies
         }
+    }
+
+    private void OnHpPickup(float healVal)
+    {
+        float tmpHeal = currHealth.value + healVal;
+        currHealth.value = tmpHeal > maxHealth.value ? maxHealth.value : tmpHeal;
+        playerHpChanged.Raise(currHealth.value/maxHealth.value);
     }
 }

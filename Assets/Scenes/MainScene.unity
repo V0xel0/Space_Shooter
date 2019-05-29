@@ -691,7 +691,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 9930946b7c5f48e44aef1e56c2de7315, type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 9930946b7c5f48e44aef1e56c2de7315, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1134,8 +1134,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerUps:
-    poolAmount: 10
+  - poolAmount: 10
     pooledObject: {fileID: 6260163873101515700, guid: be0d0b8aabc7b5e4b9ad4ac79d9c5c18,
+      type: 3}
+  - poolAmount: 10
+    pooledObject: {fileID: 4072846927430745647, guid: 111e3ef153b49274dab240e363bcdcbd,
       type: 3}
   maxSpawnX: 6
 --- !u!4 &1595042333
@@ -1150,7 +1153,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1629371013
 GameObject:
@@ -1359,6 +1362,7 @@ MonoBehaviour:
     maxZ: 8
   receivedDmg: {fileID: 11400000, guid: ac904b484c2902242b0b88f36a744277, type: 2}
   playerHpChanged: {fileID: 11400000, guid: de5748761c87fb844a8b88ccb8ac26d5, type: 2}
+  hpPickUp: {fileID: 0}
   selfExplosion: {fileID: 100008, guid: a93496017806b7740910df5fd946f306, type: 3}
   looks:
   - {fileID: 474910608}
