@@ -6,7 +6,7 @@ using Random = UnityEngine.Random;
 
 public class AsteroidSpawnerController : MonoBehaviour
 {
-    public Pooler[] asteroids;
+    public RingBuffer[] asteroids;
     public int maxSpawnX;
     private void Awake()
     {

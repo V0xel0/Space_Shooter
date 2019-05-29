@@ -13,13 +13,12 @@ public class ModelChanger : MonoBehaviour
     private int changeStep;
 
     private int innerScore;
-    //TODO:Change it later to receive msg from external system
 
     private void Start()
     {
         models[currentlyActive].SetActive(true);
     }
-
+    //TODO:Change it later to receive msg from external system
     public void Update()
     {
         //After every x points change to next skin
