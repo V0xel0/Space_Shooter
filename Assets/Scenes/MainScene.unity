@@ -1138,7 +1138,7 @@ MonoBehaviour:
     pooledObject: {fileID: 6260163873101515700, guid: be0d0b8aabc7b5e4b9ad4ac79d9c5c18,
       type: 3}
   - poolAmount: 10
-    pooledObject: {fileID: 4072846927430745647, guid: 111e3ef153b49274dab240e363bcdcbd,
+    pooledObject: {fileID: 4167144073500647357, guid: e9e4b049eea3e1441b0e7eb30ec89a43,
       type: 3}
   maxSpawnX: 6
 --- !u!4 &1595042333
@@ -1362,7 +1362,7 @@ MonoBehaviour:
     maxZ: 8
   receivedDmg: {fileID: 11400000, guid: ac904b484c2902242b0b88f36a744277, type: 2}
   playerHpChanged: {fileID: 11400000, guid: de5748761c87fb844a8b88ccb8ac26d5, type: 2}
-  hpPickUp: {fileID: 0}
+  hpPickUp: {fileID: 11400000, guid: 5ee1c9fcd792f2449b34a7fdb5392b93, type: 2}
   selfExplosion: {fileID: 100008, guid: a93496017806b7740910df5fd946f306, type: 3}
   looks:
   - {fileID: 474910608}
