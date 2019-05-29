@@ -41,7 +41,7 @@ public class GameManagerController : MonoBehaviour
                 if (isWaveActive == false)
                 {
                     InvokeRepeating(nameof(SpawnHazards), 2, spawnFreq);
-                    InvokeRepeating(nameof(SpawnPowerUps), 6, spawnFreq*4);
+                    InvokeRepeating(nameof(SpawnPowerUps), 6, spawnFreq*16);
                     isWaveActive = true;
                 }
                 if (!player.activeSelf)

@@ -6,7 +6,8 @@ using Random = UnityEngine.Random;
 public class PowerUpsSpawnerController : MonoBehaviour
 {
     public RingBuffer[] powerUps;
-    public int maxSpawnX;
+    public int maxSpawnZ;
+    public int minSpawnZ;
     
     private Rigidbody rb;
     private void Awake()
@@ -23,8 +24,10 @@ public class PowerUpsSpawnerController : MonoBehaviour
         {
             GameObject currPowerUp = buffer.GetNextObject();
             var position = transform.position;
-            currPowerUp.transform.position = new Vector3(Random.Range(-maxSpawnX, maxSpawnX), 
-                position.y, position.z);
+            currPowerUp.transform.position = new Vector3(
+                position.x, 
+                position.y, 
+                Random.Range(minSpawnZ, maxSpawnZ));
             currPowerUp.SetActive(true);
         }
     }

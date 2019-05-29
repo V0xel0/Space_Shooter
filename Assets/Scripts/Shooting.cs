@@ -37,6 +37,6 @@ public class Shooting : MonoBehaviour
 
     private void boostFireRate(float boost)
     {
-        fireRate -= boost;
+        fireRate -= fireRate*boost;
     }
 }

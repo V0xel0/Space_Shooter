@@ -4713,8 +4713,8 @@ ParticleSystemRenderer:
   m_SortingOrder: 0
   m_RenderMode: 0
   m_SortMode: 0
-  m_MinParticleSize: 0.08
-  m_MaxParticleSize: 9.6
+  m_MinParticleSize: 0.04
+  m_MaxParticleSize: 1.3
   m_CameraVelocityScale: 0
   m_VelocityScale: 0
   m_LengthScale: 2
@@ -9499,7 +9499,7 @@ Transform:
   m_GameObject: {fileID: 6260163873101515700}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_Children:
   - {fileID: 6260163873101617042}
   - {fileID: 6260163873101617040}
@@ -9593,7 +9593,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed:
-    value: -20
+    value: 10
 --- !u!114 &3194884924524904650
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9607,4 +9607,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerUpEvent: {fileID: 11400000, guid: 672ae424567afb140b33e34c519adf01, type: 2}
-  boostValue: 0.02
+  boostValue: 0.025

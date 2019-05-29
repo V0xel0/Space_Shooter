@@ -6,19 +6,25 @@ using Random = UnityEngine.Random;
 
 public class AsteroidSpawnerController : MonoBehaviour
 {
-    public Pooler asteroids;
+    public Pooler[] asteroids;
     public int maxSpawnX;
     private void Awake()
     {
-        asteroids.Init();
+        foreach (var pool in asteroids)
+        {
+            pool.Init();
+        }
     }
 
     public void SpawnAsteroid()
     {
-        GameObject currAsteroid = asteroids.GetNextObject();
-        var position = transform.position;
-        currAsteroid.transform.position = new Vector3(Random.Range(-maxSpawnX, maxSpawnX), 
-                                            position.y, position.z);
-        currAsteroid.SetActive(true);
+        foreach (var pool in asteroids)
+        {
+            GameObject currAsteroid = pool.GetNextObject();
+            var position = transform.position;
+            currAsteroid.transform.position = new Vector3(Random.Range(-maxSpawnX, maxSpawnX), 
+                position.y, position.z);
+            currAsteroid.SetActive(true);
+        }
     }
 }

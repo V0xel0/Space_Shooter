@@ -15,6 +15,6 @@ public class Mover : MonoBehaviour
 
     void Start()
     {
-        rb.velocity = transform.forward * speed.value;
+        rb.velocity = transform.right * speed.value;
     }
 }

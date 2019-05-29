@@ -23,7 +23,6 @@ public class PlayerController : MonoBehaviour
     public GameEvent hpPickUp;
     
     public GameObject selfExplosion;
-    public GameObject[] looks;
     public float tilt;
 
     private Health currHealth;
@@ -33,7 +32,6 @@ public class PlayerController : MonoBehaviour
 
     private void Awake()
     {
-        looks[indexLook].SetActive(true);
         selfExplosion = Instantiate(selfExplosion);
         selfExplosion.SetActive(false);
     }
@@ -55,16 +53,6 @@ public class PlayerController : MonoBehaviour
         selfExplosion.SetActive(true);
         receivedDmg.onEventRaisedFloat -= OnRecievedDmg;
         hpPickUp.onEventRaisedFloat -= OnHpPickup;
-    }
-
-    public void Update()
-    {
-        if (Input.GetKey(KeyCode.L))
-        {
-            looks[indexLook].SetActive(false);
-            indexLook = 1;
-            looks[indexLook].SetActive(true);
-        }
     }
 
     private void OnEnable()
