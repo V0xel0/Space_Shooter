@@ -15,10 +15,12 @@ public class Shooting : MonoBehaviour
     private void Awake()
     {
         bullets.Init();
+    }
+    private void Start()
+    {
         onPowerUpFireRate.onEventRaisedFloat += boostFireRate;
     }
 
-    // Update is called once per frame
     private void Update()
     {
         if (!Input.GetButton("Fire1") || !(Time.time > nextFire)) return;
@@ -26,6 +28,11 @@ public class Shooting : MonoBehaviour
         GameObject currBullet = bullets.GetNextObject();
         currBullet.transform.position = transform.position;
         currBullet.SetActive(true);
+    }
+
+    private void OnDisable()
+    {
+        onPowerUpFireRate.onEventRaisedFloat -= boostFireRate;
     }
 
     private void boostFireRate(float boost)

@@ -11,13 +11,9 @@ public class ProjectileController : MonoBehaviour
     {
         gameObject.SetActive(false);
     }
-
-    void Awake()
-    {
-        rb = GetComponent<Rigidbody>();
-    }
     void Start()
     {
+        rb = GetComponent<Rigidbody>();
         rb.velocity = transform.forward * speed;
     }
 }

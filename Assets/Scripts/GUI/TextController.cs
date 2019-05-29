@@ -10,15 +10,20 @@ public class TextController : MonoBehaviour
     public GameEvent onKill;
     
     private TextMeshPro text;
-    private void Awake()
+    private void Start()
     {
         text = GetComponent<TextMeshPro>();
         onKill.onEventRaised += ChangeScore;
     }
- 
+
     private void ChangeScore()
     {
         score.value++;
         text.text = score.value.ToString();
+    }
+
+    private void OnDisable()
+    {
+        onKill.onEventRaised -= ChangeScore;
     }
 }

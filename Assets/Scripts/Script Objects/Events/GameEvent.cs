@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using UnityEngine;
 [CreateAssetMenu]
+
 public class GameEvent : ScriptableObject
 {
     public event Action onEventRaised;

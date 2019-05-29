@@ -9,7 +9,6 @@ public class AsteroidController : MonoBehaviour
     public GameEvent dmgToPlayer;
     
     public BaseDamage dmg;
-    
     public GameObject explosion;
 
     void Awake()

@@ -9607,4 +9607,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerUpEvent: {fileID: 11400000, guid: 672ae424567afb140b33e34c519adf01, type: 2}
-  boostValue: 0.008
+  boostValue: 0.02

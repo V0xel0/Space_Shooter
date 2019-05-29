@@ -14,7 +14,7 @@ public struct Boundry
 }
 public class PlayerController : MonoBehaviour
 {
-    public Health maxHealth;
+    public Health  maxHealth;
     public Speed speed;
     public Boundry boundry;
     
@@ -35,7 +35,6 @@ public class PlayerController : MonoBehaviour
         looks[indexLook].SetActive(true);
         selfExplosion = Instantiate(selfExplosion);
         selfExplosion.SetActive(false);
-        receivedDmg.onEventRaisedFloat += OnRecievedDmg;
     }
 
     private void Start()
@@ -43,6 +42,7 @@ public class PlayerController : MonoBehaviour
         currHealth.value = maxHealth.value;
         movement = new Vector3(0.0f, 0.0f, 0.0f);
         rb = GetComponent<Rigidbody>();
+        receivedDmg.onEventRaisedFloat += OnRecievedDmg;
     }
 
     private void OnDisable()
@@ -51,6 +51,7 @@ public class PlayerController : MonoBehaviour
             return;
         selfExplosion.transform.position = transform.position;
         selfExplosion.SetActive(true);
+        receivedDmg.onEventRaisedFloat -= OnRecievedDmg;
     }
 
     public void Update()

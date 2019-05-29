@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq.Expressions;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.SocialPlatforms.Impl;
 
 enum GameState
@@ -18,8 +19,6 @@ public class GameManagerController : MonoBehaviour
     public AsteroidSpawnerController hazardSpawner;
     public PowerUpsSpawnerController powerUpsSpawner;
 
-    public GameEvent resetGame;
-    
     public GameObject player;
     public SharedInt score;
     
@@ -36,7 +35,6 @@ public class GameManagerController : MonoBehaviour
                 score.value = 0;
                 if (Input.GetKey(KeyCode.W))
                 {
-                    player.SetActive(true);
                     state = GameState.Running;
                 }
                 break;
@@ -49,6 +47,7 @@ public class GameManagerController : MonoBehaviour
                 }
                 if (!player.activeSelf)
                 {
+                    CancelInvoke();
                     state = GameState.End;
                 }
                 break;
@@ -56,13 +55,10 @@ public class GameManagerController : MonoBehaviour
                 isWaveActive = false;
                 if (Input.GetKey(KeyCode.R))
                 {
+                    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
                     state = GameState.StartMenu;
                 }
                 break;
-        }
-        if (!isWaveActive)
-        {
-            CancelInvoke();
         }
     }
 
