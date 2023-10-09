@@ -1,6 +1,7 @@
 # Space_Shooter
 Unity 3D top down view space shooting game. 
-Score points by shooting asteroids. Improve attack rate by picking up buffs, heal by picking up green balls.
+Score points by shooting asteroids. Improve attack rate by picking up buffs, heal by picking up green balls.   
+Score enough points to upgrade your ship automatically (3 levels of ships).
 
 ### Controls
 Press W to start and R to restart after destroying ship.
