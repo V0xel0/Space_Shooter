@@ -4,7 +4,7 @@ Score points by shooting asteroids. Improve attack rate by picking up buffs, hea
 Score enough points to upgrade your ship automatically (3 levels of ships).
 
 ### Architecture
-- Event driven logic of gameplay syystems through Unity Scriptable Objects
+- Event driven logic of gameplay systems through Unity Scriptable Objects
 - No dynamic memory allocatoion during runtime by usage of custom pools and ring buffers
 - Encapsulation of gameplay types to endure proper usage
   
