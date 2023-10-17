@@ -6,7 +6,7 @@ Score enough points to upgrade your ship automatically (3 levels of ships).
 ### Architecture
 - Event driven logic of gameplay systems through Unity Scriptable Objects
 - No dynamic memory allocatoion during runtime by usage of custom pools and ring buffers
-- Encapsulation of gameplay types to endure proper usage
+- Encapsulation of gameplay types to ensure proper usage
   
 ### Controls
 Press W to start and R to restart after destroying ship.
